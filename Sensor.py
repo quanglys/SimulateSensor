@@ -10,7 +10,7 @@ mqttc.connect('192.168.1.40', 1883)
 bStop = 1
 
 def readConfig():
-    f = open('config/config.cfg', 'r')
+    f = open('./SimulateSensor/config/config.cfg', 'r')
     global pathConfig
     pathConfig = f.readline().replace('\n','')
     global numberSensor
