@@ -57,7 +57,7 @@ try:
     for i in range(0, numberSensor):
         thread.start_new_thread(sendData, (i,))
 except:
-    print 'Can not create thread\n'
+    print ('Can not create thread\n')
 
 while bStop:
     c = raw_input('Press key "s" to stop\n')
