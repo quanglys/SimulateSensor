@@ -10,7 +10,7 @@ mqttc.connect('localhost', 1883)
 bStop = 1
 
 def readConfig():
-    f = open('config.cfg', 'r')
+    f = open('config/config.cfg', 'r')
     global pathConfig
     pathConfig = f.readline().replace('\n','')
     global numberSensor
