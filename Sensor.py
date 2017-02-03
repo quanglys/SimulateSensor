@@ -6,7 +6,7 @@ import _thread
 
 MILISECOND = 0.001
 mqttc = mqtt.Client('python_pub')
-mqttc.connect('localhost', 1883)
+mqttc.connect('192.168.1.40', 1883)
 bStop = 1
 
 def readConfig():
