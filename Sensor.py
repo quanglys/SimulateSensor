@@ -60,9 +60,6 @@ except:
     print ('Can not create thread\n')
 
 while bStop:
-    c = raw_input('Press key "s" to stop\n')
-    c = str.upper(c)
-    if (c == 'S'):
-        bStop = 0
+    time.sleep(100)
 
 
