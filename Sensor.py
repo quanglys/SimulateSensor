@@ -2,7 +2,7 @@
 import paho.mqtt.client as mqtt
 import random
 import time
-import thread
+import _thread
 
 def readConfig():
     f = open('config/config.cfg', 'r')
@@ -55,7 +55,7 @@ writeSitemapFile()
 try:
     # sendData(0)
     for i in range(0, numberSensor):
-        thread.start_new_thread(sendData, (i,))
+        _thread.start_new_thread(sendData, (i,))
 except:
     print ('Can not create thread\n')
 
