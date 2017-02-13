@@ -11,11 +11,16 @@ def readConfig():
     global ipMos
     global strMosIn
     global strMosOut
+    global timePeriod
+    timePeriod = []
     ipMos = f.readline().replace('\n', '')
     strMosIn = f.readline().replace('\n', '')
     strMosOut = f.readline().replace('\n', '')
     global numberSensor
     numberSensor = int(f.readline())
+    for i in range(0, numberSensor):
+        temp = int(f.readline())
+        timePeriod.append(temp)
     f.close()
 
 
@@ -52,7 +57,7 @@ def writeSitemapFile():
 def sendData(i):
     while bStop:
         mqttc.publish(strMosIn + str(i), random.randint(-100, 100))
-        time.sleep(random.randint(100, 1000) * MILISECOND)
+        time.sleep(timePeriod[i] * MILISECOND)
 
 
 MILISECOND = 0.001
@@ -71,5 +76,4 @@ except:
 
 while bStop:
     time.sleep(1)
-
 
